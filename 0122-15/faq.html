@@ -262,6 +262,17 @@
                             <li><a href="index.html">我的空间</a></li>
                             <li><span>实验报告</span></li>
                         </ul>
+                        <body>
+                            <span id="time" class="display-6 font-weight-bold orange-text  pt-6 ">现在是北京时间：</span>
+                          </body>
+                          
+                          <iframe name="weather_inc" 
+                          src="http://i.tianqi.com/index.php?c=code&id=7" 
+                          style="border:solid 1px #7ec8ea" 
+                          width="220" height="90" frameborder="0" 
+                          marginwidth="0" marginheight="0" scrolling="no">
+                        </iframe>
+                       
                     </div>
                 </div>
             </div>
@@ -281,7 +292,7 @@
                     <div class="col-12">
                         <div class="faq_content_wrapper" data-aos="fade-up" data-aos-delay="300">
                             <h4 class=" white-text title">本次web的学习，让我学到了很多以下是成果展示</h4>
-                            <div class="text-lg-center purple-text text-secondary">
+                            <div class="text-lg-center white-text ">
                                 <p class="title">课程感想<br />
 
                                     <br>在网页设计这门课程中，我最喜欢的就是它的“所见即所得”，虽然每一个细节都需要调很多次，但是真的让人很有成就感。
@@ -709,3 +720,12 @@
 </body>
 
 </html>
+<script>
+    function mytime() {
+      var a = new Date();
+      var b = a.toLocaleTimeString();
+      var c = a.toLocaleDateString();
+      document.getElementById("time").innerHTML = c + "&nbsp" + b;
+    }
+    setInterval(function () { mytime() }, 1000);
+  </script>

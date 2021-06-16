@@ -77,15 +77,20 @@
               <h4 class="red-text my-4"> </h4>
               <h4 class="red-text my-4">
 
-
-
-
-
-
-
-
-
               </h4>
+              <!--setInterval实时显示时间-->
+
+              <body>
+                <span id="time" class="display-4 font-weight-bold orange-text  pt-5 ">现在是北京时间：</span>
+              </body>
+              
+              <iframe name="weather_inc" 
+              src="http://i.tianqi.com/index.php?c=code&id=7" 
+              style="border:solid 1px #7ec8ea" 
+              width="220" height="90" frameborder="0" 
+              marginwidth="0" marginheight="0" scrolling="no">
+            </iframe>
+           
               <!-- Description -->
               <h4 class="red-text my-4">We shall always save a place for ourselves, only for ourselves. Andthen begin
                 to love. Have no idea of what it is, who he is, how to loveor how long it will be. Just wait for one
@@ -410,3 +415,12 @@
 </body>
 
 </html>
+<script>
+  function mytime() {
+    var a = new Date();
+    var b = a.toLocaleTimeString();
+    var c = a.toLocaleDateString();
+    document.getElementById("time").innerHTML = c + "&nbsp" + b;
+  }
+  setInterval(function () { mytime() }, 1000);
+</script>
